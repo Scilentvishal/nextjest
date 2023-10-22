@@ -1,0 +1,33 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { fetch } from "whatwg-fetch";
+
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("api/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+  return (
+  <div>
+  {users.length > 0 ? users.map((user) =>
+  
+  <div>
+    {
+        user.username
+    }
+  </div>
+  ) 
+  : (
+    <span>No Users</span>
+  )
+  }
+  </div>
+  );
+};
+
+
+export default UserList;
