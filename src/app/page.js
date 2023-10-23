@@ -1,4 +1,5 @@
 'use client'
+import RegisterForm from "@/components/RegisterForm";
 import UserList from "@/components/UserList";
 import UserProfile from "@/components/UserProfile";
 import { useState } from "react"
@@ -37,6 +38,7 @@ export default function Home() {
       />
 
       <UserList />
+      <RegisterForm />
     </main>
   )
 }
